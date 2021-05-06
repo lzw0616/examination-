@@ -1,0 +1,457 @@
+/* pages/coupon/coupon.wxss */
+/**index.wxss**/
+.page {
+  background-color: #F7F7F7;
+}
+
+.w {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 外面的按钮 */
+/* .btn{
+  width: 80px;
+  height: 35px;
+  background: #44b549;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin:20px auto;
+  border-radius: 100px; 
+} */
+
+/* 遮罩层 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.5;
+}
+
+.congrate {
+  color: #fff;
+  width: 70%;
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  font-size: 40rpx
+}
+
+/* 弹出层 */
+.modalDlg {
+  width: 70%;
+  position: fixed;
+  top: 160rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalTop {
+  background: #FF9600;
+  background: radial-gradient(circle at bottom left, transparent 10rpx, #FF9600 0) left,
+    radial-gradient(circle at bottom right, transparent 10rpx, #FF9600 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  height: 400rpx;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modalTop view:first-of-type{
+  padding: 20rpx 0 10rpx;
+}
+.modalTop view:nth-of-type(2){
+  font-size: 36rpx;
+  padding-bottom: 20rpx;
+}
+.bgwhite{
+  background-color: #fff;
+  color: grey;
+  height: 200rpx;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  line-height: 50rpx;
+  margin:0 10%;
+}
+.bgwhite view text:first-of-type{
+  color: #000;
+}
+.bgwhite view:first-of-type text:last-of-type{
+  color: #F15451;
+  font-size: 36rpx;
+}
+.modaltext {
+  color: grey;
+  height: 80rpx;
+  padding: 60rpx 83rpx;
+}
+
+/* 弹出层里面的按钮 */
+.ok {
+  width: 70%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  position: fixed;
+  top: 800rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #44b549;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+/* 弹出层里面的文字 */
+.text {
+  text-align: justify;
+  font-size: 14px;
+  color: #666;
+  width: 180px;
+  margin-top: 10px;
+}
+.modalTop2{
+  background: #00C250;
+  background: radial-gradient(circle at bottom left, transparent 10rpx, #00C250 0) left,
+    radial-gradient(circle at bottom right, transparent 10rpx, #00C250 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  height: 400rpx;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* 弹出层2 */
+.modalTop2 view:first-of-type{
+  padding: 20rpx 0 10rpx;
+}
+.modalTop2 view:nth-of-type(2){
+  font-size: 36rpx;
+  padding-bottom: 20rpx;
+}
+.modalTop2 .bigText{
+  font-size: 90rpx;
+  background-color: #1E8F4C;
+  display: inline-block;
+  width: 120rpx;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  margin: 40rpx 20rpx;
+
+}
+.oldPrice {
+  text-decoration: line-through;
+}
+
+/* 公共样式 */
+.circleTop {
+  background: #FFF2EA;
+  background: radial-gradient(circle at bottom left, transparent 10rpx, #FFF2EA 0) left,
+    radial-gradient(circle at bottom right, transparent 10rpx, #FFF2EA 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.circleBottom {
+  background: radial-gradient(circle at top left, transparent 10rpx, #fff 0) left,
+    radial-gradient(circle at top right, transparent 10rpx, #fff 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+/* 数字 */
+.num {
+  font-size: 80rpx;
+  color: #F15451;
+}
+
+/* 字体大小  */
+.fs12 {
+  font-size: 24rpx;
+}
+
+.img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.head {
+  height: 100rpx;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+.head::before {
+  content: '';
+  background-color: #E54A30;
+  width: 10rpx;
+  height: 40rpx;
+  left: 0;
+  top: 30rpx;
+  position: absolute;
+}
+
+.head .title {
+  font-size: 32rpx;
+}
+
+.head .info {
+  font-size: 26rpx;
+  color: grey;
+}
+
+/* 顶部 */
+.top {
+  background-color: #FF723F;
+  padding: 25rpx 0;
+}
+
+.top>view {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50rpx;
+}
+
+.top>view image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.top>view>view{
+  color: #fff;
+  margin:0 20rpx;
+}
+.top>view>view .name{
+  font-weight: 700;
+}
+.englishName{
+  opacity: 0.3;
+}
+/* 支付优惠券 */
+.pay {
+  margin-bottom: 20rpx;
+  filter: drop-shadow(1px 1px 2px grey);
+}
+
+.paycontent {
+  background: radial-gradient(circle at bottom left, transparent 10rpx, #FFA000 0) left,
+    radial-gradient(circle at bottom right, transparent 10rpx, #FFA000 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rpx;
+  height: 200rpx;
+  justify-content: center;
+  color: #fff;
+}
+
+.paycontent>view {
+  display: flex;
+}
+
+.paycontent>view>view {
+  margin-left: 80rpx;
+}
+
+/* 境外通用券 */
+.foreignContainer {
+  color: white;
+  margin-bottom: 20rpx;
+  filter: drop-shadow(1px 1px 2px grey);
+}
+
+.foreign {
+  background: #00C250;
+  background: radial-gradient(circle at bottom left, transparent 10rpx, #00C250 0) left,
+    radial-gradient(circle at bottom right, transparent 10rpx, #00C250 0) right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rpx;
+  height: 200rpx;
+  justify-content: center;
+}
+
+.desc {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 50rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  color: gray;
+}
+
+/* 香港优惠券 */
+.hongkongList {
+  color: grey;
+  margin-bottom: 20rpx;
+  filter: drop-shadow(1px 1px 2px grey);
+}
+
+.hongkongList .hongkongitem {
+  display: flex;
+  padding-left: 50rpx;
+  height: 200rpx;
+}
+.hongkongList .hongkongitem>view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hongkongList .hongkongitem .right{
+  padding-left:50rpx;
+  position: relative;
+}
+.hongkongList .hongkongitem .name {
+  color: #000;
+  font-size: 34rpx;
+}
+.hongkongList .hongkongitem .ddl{
+  display: inline-block;
+  bottom: 30rpx;
+  left:40rpx;
+  position: absolute;
+
+}
+
+.hongkongitem .pl20 {
+  padding-left: 40rpx;
+}
+
+.hongkongitem .pl50 {
+  padding-left: 100rpx;
+}
+
+/* 商户优惠券 */
+.discountsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.discountsList>view {
+  width: 48%;
+  margin-bottom: 30rpx;
+  /*用于实现缺口那的阴影，用box-shadow缺口那会有问题*/
+  filter: drop-shadow(1px 1px 2px grey);
+}
+
+.discountsList .coupon {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+
+}
+
+.discountsList .coupon>view:first-of-type {
+  margin-top: 40rpx;
+}
+
+.discountsList .coupon .red {
+  color: #F15451;
+  margin: 15rpx 0;
+}
+
+
+
+.discountsList .bottom {
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+
+}
+
+.discountsList .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #F15451;
+  border-radius: 0%;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+
+}
+
+/* 商家优惠 */
+.discounts {
+  background-color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  position: relative;
+}
+
+.discounts image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.discounts text {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.discounts::after {
+  content: '>';
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  color: grey;
+  font-size: 50rpx;
+}
+
+/* 底部 */
+.foot {
+  width: 35.5%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.foot text {
+  color: grey;
+  font-size: 24rpx;
+}

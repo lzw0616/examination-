@@ -1,13 +1,22 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/coupon/coupon",
+    "pages/index/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "lzw",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#FF723F",
+    "navigationBarTitleText": "境外旅游包",
+    "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/coupon/coupon",
+      "text": "领券中心"
+    }]
+  },
+  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

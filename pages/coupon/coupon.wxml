@@ -1,0 +1,109 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="page">
+  <!-- 头部 -->
+  <view class="top">
+    <view class="w">
+      <image src="http://www.runoob.com/try/demo_source/paris.jpg" class="img"></image>
+      <view>
+        <view class="name">屈臣氏</view>
+        <view class="englishName">watsons</view>
+      </view>
+    </view>
+  </view>
+  <!-- 支付优惠券 -->
+  <view class="head w"><text class="title">微信支付优惠券</text><text class="info">微信支付自动抵扣</text></view>
+  <!-- 超优汇率券 -->
+  <view class="pay w">
+    <view class="paycontent">
+      <view>
+        <image src="http://www.runoob.com/try/demo_source/paris.jpg" class="img"></image>
+        <view><text class="pl50 name">{{pay.name}}</text><text class="fs12">\n{{pay.ddl}}天内笔笔有效</text></view>
+      </view>
+
+    </view>
+    <view class="desc circleBottom">
+      <text>{{pay.hk}}港币={{pay.rmb}}人民币</text><text>市场参考价</text><text>{{pay.old}}人民币</text></view>
+  </view>
+  <!-- 境外通用券 -->
+  <view class="foreignContainer w">
+    <view class="foreign">
+      <view><text class="num">{{foreign.rmb}}</text><text>元</text><text class="name">{{foreign.name}}</text></view>
+      <view><text>满{{foreign.limit}}元可用</text><text class="pl20 fs12">{{foreign.ddl}}天有效</text></view>
+    </view>
+    <view class="circleBottom desc"><text>{{foreign.last}}待解锁</text>{{foreign.desc}}</view>
+  </view>
+  <!-- 香港地区优惠券 -->
+  <view>
+    <view wx:for="{{hongkong}}" class="hongkongList w">
+      <view class="circleTop hongkongitem">
+        <view>
+          <view><text class="num">{{item.rmb}}</text><text>元</text></view><text>满{{item.limit}}元可用</text>
+        </view>
+        <view class="right"><text class="name">{{item.name}}</text><text class="fs12 ddl">{{item.ddl}}天有效</text></view>
+      </view>
+      <view class="circleBottom desc">{{item.desc}}</view>
+    </view>
+  </view>
+  <!-- 商户优惠券 -->
+  <view class="w head"><text class="title">商户优惠券</text><text class="info">请向收银员出示使用优惠券</text></view>
+  <view class="discountsList w">
+    <view wx:for="{{discountsList}}">
+      <view class="coupon circleTop">
+        <view>{{item.englishTitle}}</view>
+        <view>{{item.title}}</view>
+        <view class="red">
+          <text class="num" wx:if="{{item.unit===undefined}}"><image src=""></image></text>
+          <text class="num" wx:if="{{item.unit!==undefined}}">{{item.num}}</text><text>{{item.unit}}</text>
+        </view>
+        <view class="red" wx:if="{{item.index===1 || item.index===3}}">满300港币可用</view>
+        <view class="red" wx:if="{{item.index===2}}">满300港币可得</view>  
+        <view class="red" wx:if="{{item.index===4}}">原价<text>{{item.oldPrice}}港币</text></view>  
+      </view>
+      <view class="bottom circleBottom">
+        <view class="btn">使用优惠</view>
+      </view>
+    </view>
+  </view>
+  <!-- 更多商家优惠 -->
+  <view class="discounts">
+    <image src=""></image><text>更多商家优惠</text>
+  </view>
+  <!-- 活动规则 -->
+  <view class="foot">
+    <text>活动规则</text><text>|</text><text>联系客服</text>
+  </view>
+  <!--index.wxml-->
+  <!-- 遮罩层 -->
+  <view class="mask" catchtouchmove="true" wx:if="{{showModal}}"></view>
+  <!-- 弹出层1 -->
+  <view class="congrate" wx:if="{{showModal}}">恭喜你获得：</view>
+  <view class="modalDlg" wx:if="{{showModal}}" catchtouchmove='true'>
+    <!-- 弹出层内容 -->
+    <view class="modalTop">
+      <view>微信支付</view>
+      <view>超优汇率券</view>
+      <view class="bgwhite">
+        <view><text class="fs12">100港币=</text><text>85.51人民币</text></view>
+        <view><text class="fs12">市场参考价</text><text class="oldPrice fs12">85.80人民币</text></view>
+      </view>
+    </view>
+    <view class="circleBottom modaltext fs12">境外线下门店支付时，每单都可享受微信支付超优汇率，生效期7天</view>
+  </view>
+  <view bindtap="ok" class="ok" wx:if="{{showModal}}">领取下一张</view>
+  <!-- 遮罩层 -->
+  <view class="mask" catchtouchmove="true" wx:if="{{showModal2}}"></view>
+  <!-- 弹出层2 -->
+  <view class="modalDlg" wx:if="{{showModal2}}" catchtouchmove="true">
+    <!-- 弹出层内容 -->
+    <view class="modalTop2">
+      <view>微信支付</view>
+      <text>境外通用券</text>
+      <view>
+        <text class="bigText">3</text><text>元</text>
+      </view>
+      <!-- 未完成 -->
+    </view>
+    <view class="circleBottom modaltext fs12">使用后，扫不同礼包码，可获得2倍优惠，第5次将出现超级优惠</view>
+  </view>
+  <view bindtap="ok2" class="ok" wx:if="{{showModal2}}">领取更多</view>
+</view>
